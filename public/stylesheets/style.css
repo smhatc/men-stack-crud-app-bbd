@@ -65,3 +65,64 @@ button:hover {
 button:active {
         background-color: #2d4d3a;
 }
+
+li {
+        list-style: none;
+}
+
+.index-header-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+}
+
+.businesses-index-link {
+        text-decoration: none;
+}
+
+.index-link-text {
+        background-color: #f47b5b;
+        color: white;
+        font-size: 1.4em;
+        width: 10em;
+        padding: 5px 15px;
+        margin: 15px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 5px #ffbd59;
+}
+
+.index-link-text:hover {
+        background-color: #ffbd59;
+        box-shadow: 0 5px #f47b5b;
+}
+
+.index-link-text:active {
+        background-color: #f47b5b;
+        box-shadow: 0 2.5px #ffbd59;
+}
+
+.add-business {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+        text-decoration: none;
+        width: 6em;
+        text-transform: uppercase;
+        background-color: #769642;
+        border-radius: 30px;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 1.2em;
+}
+
+.index-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}

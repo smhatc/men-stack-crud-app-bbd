@@ -2,9 +2,12 @@ const express = require("express");
 const router = express.Router();
 const Business = require("../models/business.js");
 
-// TEST ROUTE
-router.get("/", (req, res) => {
-        res.send("Hello World!");
+// INDEX OF ALL BUSINESSES
+router.get("/", async (req, res) => {
+        const allBusinesses = await Business.find();
+        res.render("./businesses/index.ejs", {
+                allBusinesses
+        });
 });
 
 // RENDER NEW BUSINESS FORM
@@ -19,9 +22,16 @@ router.post("/", async (req, res) => {
         } else {
                 req.body.isVerified = false;
         }
-        console.log(req.body);
         await Business.create(req.body);
-        res.redirect("/businesses/new");
-})
+        res.redirect("/businesses");
+});
+
+// SHOW ONE BUSINESS
+router.get("/:businessId", async (req, res) => {
+        const foundBusiness = await Business.findById(req.params.businessId);
+        res.render("./businesses/show.ejs", {
+                foundBusiness
+        });
+});
 
 module.exports = router;
