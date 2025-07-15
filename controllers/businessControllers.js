@@ -39,4 +39,11 @@ router.delete("/:businessId", async (req, res) => {
         res.redirect("/businesses");
 });
 
+router.get("/:businessId/edit", async (req, res) => {
+        const foundBusiness = await Business.findById(req.params.businessId);
+        res.render("./businesses/edit.ejs", {
+                foundBusiness
+        });
+});
+
 module.exports = router;
