@@ -3,6 +3,8 @@ dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const methodOverride = require("method-override");
+const morgan = require("morgan");
 const app = express();
 const port = 5000;
 
@@ -18,6 +20,8 @@ mongoose.connection.on("connected", () => {
 // MIDDLEWARE
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
 
 // ROUTES
 app.get("/", (req, res) => {

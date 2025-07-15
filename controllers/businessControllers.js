@@ -34,4 +34,9 @@ router.get("/:businessId", async (req, res) => {
         });
 });
 
+router.delete("/:businessId", async (req, res) => {
+        await Business.findByIdAndDelete(req.params.businessId);
+        res.redirect("/businesses");
+});
+
 module.exports = router;
