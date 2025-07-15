@@ -167,6 +167,8 @@ li {
 }
 
 .edit-link {
+        display: block;
+
         text-decoration: none;
 }
 
@@ -193,4 +195,13 @@ li {
 .edit-text:active {
         background-color: #2d4d3a;
         background-color: rgb(217, 108, 78);
+}
+
+.delete-form {
+        padding: 0;
+        box-shadow: 0 0;
+        background-color: transparent;
+        height: 50px;
+        margin: 0 20px 0 0;
+        min-height: 100%;
 }
